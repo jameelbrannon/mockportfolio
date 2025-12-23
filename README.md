@@ -1,5 +1,7 @@
 This repository documents a notional, primarily long-oriented portfolio and the fundamental research supporting each position.
 
+The portfolio is expressed on a $1,000,000 notional basis for analytical clarity and does not represent a real-money portfolio.
+
 ## Investment Approach
 
 - Fundamental, research-driven
