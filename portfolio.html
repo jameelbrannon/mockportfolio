@@ -1,1 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Model Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --panel: #0f1620;
+      --text: #e6edf3;
+      --muted: #9fb0c0;
+      --border: #223041;
+      --link: #7db7ff;
+      --link-hover: #a8d1ff;
+    }
+
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 32px auto;
+      padding: 0 16px;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin: 0 0 8px 0;
+      font-weight: 650;
+    }
+
+    h2 {
+      font-size: 16px;
+      margin: 0 0 12px 0;
+      font-weight: 600;
+    }
+
+    .sub {
+      color: var(--muted);
+      margin: 0 0 16px 0;
+      font-size: 14px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .table-wrap {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: auto;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 1400px;
+    }
+
+    thead th {
+      position: sticky;
+      top: 0;
+      background: rgba(15, 22, 32, 0.98);
+      z-index: 2;
+      font-size: 12px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    th, td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    tbody tr:hover {
+      background: rgba(255,255,255,0.03);
+    }
+
+    td.num, th.num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    .log {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .summary {
+      margin-top: 28px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      max-width: 520px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      row-gap: 8px;
+      column-gap: 16px;
+    }
+
+    .divider {
+      border-top: 1px solid var(--border);
+      padding-top: 8px;
+      margin-top: 4px;
+    }
+
+    .right {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .note {
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: 12px;
+      max-width: 760px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <h1>Model Portfolio</h1>
+    <p class="sub">
+      Notional basis: <span class="pill">$1,000,000</span>
+      &nbsp;•&nbsp; Prices shown are reference points at time of entry.
+    </p>
+
+    <!-- Portfolio Table -->
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Ticker</th>
+            <th class="num">Position</th>
+            <th class="num">Price</th>
+            <th class="num">Avg Cost</th>
+            <th class="num">Cost Basis</th>
+            <th class="num">Current Basis</th>
+            <th class="num">P&amp;L</th>
+            <th class="num">% Portfolio</th>
+            <th class="num">% Gain</th>
+            <th class="num">Abs</th>
+            <th>Date Entered</th>
+            <th class="num">Days Held</th>
+            <th class="num">Annualized</th>
+            <th>Industry</th>
+            <th>Thesis</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>NEM</td>
+            <td class="num">285</td>
+            <td class="num">105.44</td>
+            <td class="num">105.44</td>
+            <td class="num">30,050</td>
+            <td class="num">30,050</td>
+            <td class="num">—</td>
+            <td class="num">3.01%</td>
+            <td class="num">0.0%</td>
+            <td class="num">30,050</td>
+            <td>2025-12-23</td>
+            <td class="num">0</td>
+            <td class="num">0%</td>
+            <td>Gold</td>
+            <td><a href="theses/nem.md">Thesis</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Transparency Log -->
+    <p class="log">
+      Transparency log: 12.23.25 — allocated ~3% to NEM.
+    </p>
+
+    <!-- Portfolio Summary -->
+    <div class="summary">
+      <h2>Portfolio Summary</h2>
+
+      <div class="summary-grid">
+        <div>Capital Contribution</div>
+        <div class="right">1,000,000</div>
+
+        <div>Unrealized P&amp;L</div>
+        <div class="right">0</div>
+
+        <div>Realized P&amp;L</div>
+        <div class="right">0</div>
+
+        <div class="divider">Portfolio Value</div>
+        <div class="right divider">1,000,000</div>
+
+        <div style="margin-top: 12px;">Gross Exposure</div>
+        <div class="right" style="margin-top: 12px;">30,050</div>
+
+        <div>Gross Exposure %</div>
+        <div class="right">3.01%</div>
+
+        <div>Net Exposure</div>
+        <div class="right">30,050</div>
+
+        <div>Net Exposure %</div>
+        <div class="right">3.01%</div>
+
+        <div class="divider">Return</div>
+        <div class="right divider">0.00%</div>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <p class="note">
+      This is a notional portfolio for research and illustrative purposes only.
+      It does not represent real-money performance and does not constitute investment advice.
+      Prices ignore commissions and taxes and assume all position lots are filled at a single average price.
+      The GitHub repository serves as the full, transparent ledger of record; portfolio changes are tracked there,
+      with summarized updates reflected on this page through a dated transparency log.
+    </p>
+  </div>
+</body>
+</html>
+
 
